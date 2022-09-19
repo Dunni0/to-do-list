@@ -26,11 +26,11 @@ function addTodo(todo){
 
     if (todoText){
         const todoEl = document.createElement("li");
-        todoEl.append
+        
         if(todo && todo.complete){
             todoEl.classList.add("complete");
-        }
-       
+        } 
+
     //to display 
         
         todoEl.innerText = todoText
@@ -41,10 +41,7 @@ function addTodo(todo){
             addToLS();
         })
 
-        todoEl.addEventListener("dblclick", function(){
-            todoEl.classList.add("remove")
-            addToLS();
-        })
+        
         
 
         todos.appendChild(todoEl);    
@@ -56,6 +53,12 @@ function addTodo(todo){
             todoEl.remove();
             addToLS();
        })
+       
+       todoEl.addEventListener("dblclick", function(e){
+            e.preventDefault();   
+            todoEl.remove();
+            addToLS();
+        })
 
     // empty the input
     
@@ -79,7 +82,7 @@ function addToLS(){
     todosEl.forEach((todoEl) => {
         todos.push({
         text: todoEl.innerText,
-        complete: todoEl.classList.contains("complete")         
+        complete: todoEl.classList.contains("complete"),
         }); 
     });
 
