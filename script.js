@@ -26,7 +26,7 @@ function addTodo(todo){
 
     if (todoText){
         const todoEl = document.createElement("li");
-
+        todoEl.append
         if(todo && todo.complete){
             todoEl.classList.add("complete");
         }
@@ -38,6 +38,11 @@ function addTodo(todo){
     // to cross-out a completed task
         todoEl.addEventListener("click",function(){
             todoEl.classList.toggle("complete")
+            addToLS();
+        })
+
+        todoEl.addEventListener("dblclick", function(){
+            todoEl.classList.add("remove")
             addToLS();
         })
         

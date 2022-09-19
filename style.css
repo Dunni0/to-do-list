@@ -122,6 +122,18 @@ input{
 }
 
 
+@media (max-width: 1278PX)  {
+    .remove{
+        display: none;
+    }
+}
+
+@media (min-width: 1279px){
+    .dblclick{
+        display: none;
+    }
+}
+
 
 
 
